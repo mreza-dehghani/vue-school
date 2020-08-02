@@ -1,6 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Teachers from '../views/Teachers.vue'
+import Students from '../views/Students.vue'
+import EachOne from '../views/EachOne.vue'
+import E404 from '../views/e404.vue'
+
 
 Vue.use(VueRouter)
 
@@ -11,12 +16,22 @@ Vue.use(VueRouter)
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/teachers',
+    name: 'Teachers',
+    component: Teachers
+  },
+  {
+    path: '/students',
+    name: 'Students',
+    component: Students
+  },  {
+    path: '/single/:cat/:id',
+    name: 'EachOne',
+    component: EachOne
+  },
+  {
+    path: '*',
+    component: E404
   }
 ]
 
